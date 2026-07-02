@@ -642,7 +642,7 @@ body {
 }
 
 /* ============================================================
-   SKILLS (Blueprints) — UPDATED WITH DATABASE + ANIMATED ICONS
+   SKILLS (Blueprints) — ALL CARDS IDENTICAL
    ============================================================ */
 .skills-grid {
     display: grid;
@@ -703,18 +703,6 @@ body {
     font-size: 0.7rem;
     color: var(--text-secondary);
     opacity: 0.7;
-}
-/* Database skill highlight */
-.skill-node.database-skill {
-    border-color: var(--cyan);
-    background: rgba(0, 240, 255, 0.04);
-}
-.skill-node.database-skill:hover {
-    border-color: var(--cyan);
-    box-shadow: 0 0 40px var(--cyan-glow);
-}
-.skill-node.database-skill .icon {
-    color: var(--cyan);
 }
 
 @media (max-width: 900px) {
