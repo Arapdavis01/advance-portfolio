@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Digital Cartographer · Dancun K. Koech</title>
+
+    <!-- ============================================================
+    SEO & OPEN GRAPH
+    ============================================================ -->
+    <meta name="description" content="Dancun K. Koech — System Analyst, Data Analyst, Programmer, Web Developer, System Developer, Network Architect, Database Engineer. Building systems that scale." />
+    <meta property="og:title" content="Dancun K. Koech · The Digital Cartographer" />
+    <meta property="og:description" content="System Analyst · Data Analyst · Programmer · Web Developer · System Developer · Network Architect · Database Engineer" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#07070d" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⏺</text></svg>" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Orbitron:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome (real icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- tsParticles (Feature 11 - Network Background) -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+
+    <!-- ============================================================
+    GOOGLE ANALYTICS (Feature 17)
+    Replace G-XXXXXXXXXX with your actual Measurement ID
+    ============================================================ -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- ============================================================
+    MAIN STYLESHEET
+    ============================================================ -->
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+    <!-- ============================================================
+    PARTICLES BACKGROUND (Feature 11)
+    ============================================================ -->
+    <div id="particles-bg"></div>
+
+    <!-- CURSOR GLOW -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- ============================================================
+    NAVIGATION (with Dark/Light toggle)
+    ============================================================ -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="logo">⏺ <span>NEXUS</span>_</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#archive">Archive</a></li>
+            <li><a href="#stats">Stats</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#blueprints">Blueprints</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#logbook">Logbook</a></li>
+            <li><a href="#beacon">Beacon</a></li>
+        </ul>
+        <!-- Dark/Light Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ============================================================
+    HERO
+    ============================================================ -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+
+            <div class="profile-container">
+                <div class="avatar-ring">
+                    <img src="images/Attitude-dp15.jpg" alt="Dancun K. Koech" class="profile-img" />
+                </div>
+                <h2 class="profile-name">Dancun .K. Koech</h2>
+            </div>
+
+            <div class="hero-badge">⚡ THE DIGITAL CARTOGRAPHER</div>
+            <h1>Map, <span class="highlight">Build &amp; Connect</span></h1>
+            <p class="roles">
+                <strong>System Analyst</strong> · <strong>Data Analyst</strong> · <strong>Programmer</strong> ·<br />
+                <strong>Web Developer</strong> · <strong>System Developer</strong> · <strong>Network Architect</strong> · <strong>Database Engineer</strong>
+            </p>
+            <a href="#archive" class="cta">Explore the Archive</a>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    ARCHIVE (Projects)
+    ============================================================ -->
+    <section class="section-pad" id="archive">
+        <div class="container">
+            <span class="section-label">📂 The Archive</span>
+            <h2 class="section-title">Flagship Expeditions</h2>
+            <p class="section-sub">Live projects, systems, and networks I have engineered.</p>
+
+            <div class="project-grid">
+
+                <!-- PROJECT 1 -->
+                <div class="project-card fade-up" data-title="Kapyubei Tea Farm Management" data-image="images/kapyubei.png" data-link="#" data-challenge="Manual tracking of harvest cycles and worker allocation was error-prone and slow." data-tech="Django, PostgreSQL, PWA" data-result="Reduced reporting time by 65% and improved yield tracking accuracy by 40%.">
+                    <div class="thumb">
+                        <img src="images/kapyubei.png" alt="Tea farm management" />
+                    </div>
+                    <div class="body">
+                        <h3>Kapyubei Tea Farm Management</h3>
+                        <p>End-to-end plantation system tracking harvest cycles, worker allocation, and supply chain logistics. Real-time yield monitoring with predictive maintenance.</p>
+                        <button class="project-link modal-trigger" data-target="modal">View Case Study →</button>
+                    </div>
+                </div>
+
+                <!-- PROJECT 2 -->
+                <div class="project-card fade-up" data-title="Talaen Hardware Management" data-image="images/talaen.png" data-link="https://talaen-hardware-production.up.railway.app/" data-challenge="Manual inventory tracking across multiple branches caused frequent stockouts and overstocking." data-tech="Laravel, MySQL, RESTful APIs" data-result="Reduced stockouts by 75% and increased inventory turnover by 30%.">
+                    <div class="thumb">
+                        <img src="images/talaen.png" alt="Hardware management" />
+                    </div>
+                    <div class="body">
+                        <h3>Talaen Hardware Management</h3>
+                        <p>Comprehensive inventory and sales platform with barcode scanning, automated reorder triggers, and multi-branch sync. Built with Laravel, MySQL, and RESTful APIs.</p>
+                        <button class="project-link modal-trigger" data-target="modal">View Case Study →</button>
+                    </div>
+                </div>
+
+                <!-- PROJECT 3 -->
+                <div class="project-card fade-up" data-title="Riverview Resort Website" data-image="images/riverview.png" data-link="#" data-challenge="The resort had no online booking system — all reservations were phone-based and manual." data-tech="React, Next.js, Headless CMS, M-Pesa/Stripe" data-result="Increased direct bookings by 120% and reduced admin workload by 80%.">
+                    <div class="thumb">
+                        <img src="images/riverview.png" alt="Riverview Resort" />
+                    </div>
+                    <div class="body">
+                        <h3>Riverview Resort Website</h3>
+                        <p>Immersive booking platform with dynamic availability, M-Pesa/Stripe payments, and virtual tour. Built with React, Next.js, and headless CMS.</p>
+                        <button class="project-link modal-trigger" data-target="modal">View Case Study →</button>
+                    </div>
+                </div>
+
+                <!-- PROJECT 4 -->
+                <div class="project-card fade-up" data-title="Chissano Animal Market" data-image="images/chissano.png" data-link="#" data-challenge="Livestock trading was informal with no buyer/seller verification, leading to fraud and disputes." data-tech="Flask, MongoDB, WebSockets, Geo-location" data-result="Connected 500+ verified buyers/sellers in the first 3 months with a 95% satisfaction rate.">
+                    <div class="thumb">
+                        <img src="images/chissano.png" alt="Chissano Animal Market" />
+                    </div>
+                    <div class="body">
+                        <h3>Chissano Animal Market</h3>
+                        <p>Full-featured livestock e‑commerce marketplace with authentication, real‑time bidding, chat, and geo‑tracking. Built with Flask, MongoDB, and WebSockets.</p>
+                        <button class="project-link modal-trigger" data-target="modal">View Case Study →</button>
+                    </div>
+                </div>
+
+                <!-- PROJECT 5 -->
+                <div class="project-card fade-up" data-title="Network Monitoring Suite" data-image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" data-link="#" data-challenge="Distributed network segments had no unified visibility, making anomaly detection reactive." data-tech="React, Node.js, WebSockets, GraphQL" data-result="Reduced mean time to detection (MTTD) from 45 minutes to under 2 minutes.">
+                    <div class="thumb">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="Network Monitoring" />
+                    </div>
+                    <div class="body">
+                        <h3>Network Monitoring Suite</h3>
+                        <p>Real‑time topology mapping with anomaly detection. Full‑stack React + Node.js + WebSockets for live packet analysis and automated alerting.</p>
+                        <button class="project-link modal-trigger" data-target="modal">View Case Study →</button>
+                    </div>
+                </div>
+
+                <!-- PROJECT 6 -->
+                <div class="project-card fade-up" data-title="Legacy System Migration" data-image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" data-link="#" data-challenge="The monolith was becoming unmaintainable, with deployment taking 6+ hours." data-tech="Docker, Kubernetes, CI/CD, Blue-Green Deployment" data-result="Achieved 99.99% uptime during migration and cut deployment time to under 5 minutes.">
+                    <div class="thumb">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" alt="System Migration" />
+                    </div>
+                    <div class="body">
+                        <h3>Legacy System Migration</h3>
+                        <p>Zero‑downtime migration from monolith to microservices (Docker/K8s) with CI/CD pipelines, blue‑green deployments, and automated rollback.</p>
+                        <button class="project-link modal-trigger" data-target="modal">View Case Study →</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    STATS COUNTERS
+    ============================================================ -->
+    <section class="section-pad" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-up">
+                    <span class="stat-number" data-count="6">0</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+                <div class="stat-item fade-up">
+                    <span class="stat-number" data-count="4">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item fade-up">
+                    <span class="stat-number" data-count="3">0</span>
+                    <span class="stat-label">Industries Served</span>
+                </div>
+                <div class="stat-item fade-up">
+                    <span class="stat-number" data-count="99">0</span>
+                    <span class="stat-label">% Uptime Delivered</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    TESTIMONIALS CAROUSEL
+    ============================================================ -->
+    <section class="section-pad" id="testimonials">
+        <div class="container">
+            <span class="section-label">💬 Testimonials</span>
+            <h2 class="section-title">What Clients Say</h2>
+
+            <div class="testimonial-carousel">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-slide active">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"Dancun delivered a game-changing platform for our tea farm. The real-time yield monitoring has completely transformed our operations. His ability to bridge agriculture and technology is unmatched."</p>
+                        <div class="client-info">
+                            <strong>— Titus .K. Koech</strong>
+                            <span>Farm Manager, Kapyubei Tea Estate</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"The hardware management system Talaen built for us cut our stockout rates by 75% almost overnight. Danco understood our pain points better than we did. Highly recommend."</p>
+                        <div class="client-info">
+                            <strong>— Dennis Kimutai</strong>
+                            <span>Owner, Talaen Hardware</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"Riverview's new booking platform is stunning. We went from zero online bookings to a fully automated system that increased our revenue by 120%. Dancun is a true professional."</p>
+                        <div class="client-info">
+                            <strong>— Michael Ochieng</strong>
+                            <span>General Manager, Riverview Resort</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"Dancun's network monitoring suite gave us visibility we never had before. We catch anomalies in minutes, not hours. His expertise is world-class."</p>
+                        <div class="client-info">
+                            <strong>— Sarah Akinyi</strong>
+                            <span>CTO, TechFusion Networks</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Controls -->
+                <div class="carousel-dots" id="carouselDots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                    <span class="dot" data-index="3"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    BLUEPRINTS (Skills) — UPDATED WITH DATABASE ENGINEERING
+    ============================================================ -->
+    <section class="section-pad" id="blueprints">
+        <div class="container">
+            <span class="section-label">🧩 The Blueprints</span>
+            <h2 class="section-title">Core Disciplines</h2>
+            <p class="section-sub">Seven domains, one unified architecture. Each skill fuels the others.</p>
+            <div class="skills-grid">
+                <div class="skill-node fade-up">
+                    <span class="icon">⚙️</span>
+                    <h4>Systems Analysis</h4>
+                    <p>Requirements · Architecture · Optimization</p>
+                </div>
+                <div class="skill-node fade-up">
+                    <span class="icon">📊</span>
+                    <h4>Data Analysis</h4>
+                    <p>ETL · Visualization · Predictive Modeling</p>
+                </div>
+                <div class="skill-node fade-up">
+                    <span class="icon">💻</span>
+                    <h4>Programming</h4>
+                    <p>Python · Java · C++ · Go</p>
+                </div>
+                <div class="skill-node fade-up">
+                    <span class="icon">🌐</span>
+                    <h4>Web Development</h4>
+                    <p>React · Node · Full‑Stack</p>
+                </div>
+                <div class="skill-node fade-up">
+                    <span class="icon">🏗️</span>
+                    <h4>System Development</h4>
+                    <p>Microservices · APIs · DevOps</p>
+                </div>
+                <div class="skill-node fade-up">
+                    <span class="icon">📡</span>
+                    <h4>Networking</h4>
+                    <p>TCP/IP · SDN · Security · Monitoring</p>
+                </div>
+                <!-- NEW: Database Engineering -->
+                <div class="skill-node database-skill fade-up">
+                    <span class="icon">🗄️</span>
+                    <h4>Database Engineering</h4>
+                    <p>SQL · NoSQL · Optimization · Replication · Backup &amp; Recovery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    BLOG / ARTICLES (Feature 9)
+    ============================================================ -->
+    <section class="section-pad" id="blog">
+        <div class="container">
+            <span class="section-label">✍️ Field Notes</span>
+            <h2 class="section-title">Articles &amp; Insights</h2>
+            <p class="section-sub">Thoughts on systems, data, and the architectures that power our world.</p>
+
+            <div class="blog-grid">
+                <!-- Blog 1 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-thumb">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Data Pipeline" />
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-tag">Data Engineering</span>
+                        <h4>Building Scalable ETL Pipelines with Python</h4>
+                        <p>A deep dive into designing fault-tolerant data pipelines that handle millions of records daily.</p>
+                        <a href="#" class="blog-link" target="_blank">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Blog 2 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-thumb">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="Network Security" />
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-tag">Networking</span>
+                        <h4>Zero-Trust Network Architecture: A Practical Guide</h4>
+                        <p>Why traditional perimeter security fails, and how to implement zero-trust principles in your organization.</p>
+                        <a href="#" class="blog-link" target="_blank">Read More →</a>
+                    </div>
+                </div>
+
+                <!-- Blog 3 -->
+                <div class="blog-card fade-up">
+                    <div class="blog-thumb">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" alt="Database Optimization" />
+                    </div>
+                    <div class="blog-body">
+                        <span class="blog-tag">Database</span>
+                        <h4>PostgreSQL Performance Tuning: 10 Essential Tips</h4>
+                        <p>From index optimization to query planning — practical techniques to make your database scream.</p>
+                        <a href="#" class="blog-link" target="_blank">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    LOGBOOK (About) — UPDATED WITH DATABASE
+    ============================================================ -->
+    <section class="section-pad" id="logbook">
+        <div class="container">
+            <span class="section-label">📖 The Logbook</span>
+            <h2 class="section-title">The Journey</h2>
+
+            <div class="logbook-grid">
+                <div class="text-block fade-up">
+                    <p><strong>Act I · The Foundation</strong></p>
+                    <p>My path began in the trenches of system architecture — understanding how data flows, where bottlenecks form, and how networks breathe. I learned that <strong>every system tells a story</strong> through its logs, its packets, and its users.</p>
+                </div>
+                <div class="image-block fade-up">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop" alt="Early workspace" />
+                </div>
+            </div>
+
+            <div class="logbook-grid reverse" style="margin-top: 3rem;">
+                <div class="image-block fade-up">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="Convergence" />
+                </div>
+                <div class="text-block fade-up">
+                    <p><strong>Act II · The Convergence</strong></p>
+                    <p>I didn't want to be siloed. I dug into <strong>data analytics</strong> to speak the language of metrics, <strong>web development</strong> to humanize interfaces, <strong>database engineering</strong> to master data persistence, and <strong>networking</strong> to secure the pipes. Today, I navigate the full stack — from silicon to screen.</p>
+                </div>
+            </div>
+
+            <div class="logbook-grid" style="margin-top: 3rem;">
+                <div class="text-block fade-up">
+                    <p><strong>Act III · The Present</strong></p>
+                    <p>I'm focused on <strong>intelligent system design</strong> — building autonomous, self‑healing infrastructures that adapt to real‑time data. Every project is a new continent to map.</p>
+                </div>
+                <div class="image-block fade-up">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop" alt="Current work" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    BEACON (Contact) — WITH REAL CONTACT FORM (Feature 10)
+    ============================================================ -->
+    <section class="section-pad" id="beacon">
+        <div class="beacon-bg"></div>
+        <div class="container">
+            <span class="section-label">📡 The Beacon</span>
+            <h2 class="section-title" style="margin-bottom:0.5rem;">
+                Ready to build the <span class="glow-text">next infrastructure</span>?
+            </h2>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0.5rem auto 0; font-size: 1.05rem;">
+                I architect systems that scale — from data pipelines to full‑stack platforms.
+                Let's turn your vision into reality.
+            </p>
+
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="user_name">Your Name</label>
+                        <input type="text" id="user_name" placeholder="e.g., John Doe" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="user_email">Your Email</label>
+                        <input type="email" id="user_email" placeholder="john@example.com" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Project inquiry, collaboration, etc." required />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit" id="formSubmit">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                    <div id="formStatus" class="form-status"></div>
+                </form>
+            </div>
+
+            <!-- Social Links -->
+            <div class="contact-links">
+                <a href="mailto:dancun6742@gmail.com" target="_blank" title="Email">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="#" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                </a>
+                <a href="#" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="#" target="_blank" title="Twitter / X">
+                    <i class="fab fa-x-twitter"></i> X
+                </a>
+                <a href="#" target="_blank" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <a href="#" class="btn-cv" download>
+                    <i class="fas fa-file-pdf"></i> Download CV
+                </a>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <span class="status-badge">
+                    <i class="fas fa-circle"></i> Available for collaboration
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    CASE STUDY MODAL
+    ============================================================ -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <div class="modal-body">
+                <img src="" alt="Project" id="modalImage" />
+                <div class="modal-text">
+                    <h3 id="modalTitle">Project Title</h3>
+                    <div class="modal-detail">
+                        <h4><i class="fas fa-bolt"></i> Challenge</h4>
+                        <p id="modalChallenge">The challenge description goes here.</p>
+                    </div>
+                    <div class="modal-detail">
+                        <h4><i class="fas fa-code"></i> Tech Stack</h4>
+                        <p id="modalTech">Tech stack details.</p>
+                    </div>
+                    <div class="modal-detail">
+                        <h4><i class="fas fa-chart-line"></i> Result</h4>
+                        <p id="modalResult">The outcome and impact.</p>
+                    </div>
+                    <div class="modal-actions">
+                        <a href="#" id="modalLink" target="_blank" class="btn-modal">Live Demo <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+    BACK TO TOP BUTTON
+    ============================================================ -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================================
+    FOOTER
+    ============================================================ -->
+    <footer class="footer">
+        <div class="container"><p>© 2026 · The Digital Cartographer · Crafted with purpose.</p></div>
+    </footer>
+
+    <!-- ============================================================
+    JAVASCRIPT
+    ============================================================ -->
+    <!-- EmailJS SDK (Feature 10) -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
