@@ -3,13 +3,18 @@
 // Caches core assets, images, and external resources for offline viewing
 // ============================================================
 
-// ⚠️ BUMPED VERSION TO v3 TO FORCE CACHE REFRESH
-const CACHE_NAME = 'digital-cartographer-v3';
+// ⚠️ BUMPED VERSION TO v4 TO FORCE CACHE REFRESH
+// Also using a cache-busting approach: whenever you update content,
+// bump the version number below and update the timestamp in the HTML
+const CACHE_NAME = 'digital-cartographer-v4';
+const CACHE_VERSION = 'v4.0.0'; // Bump this when you make changes
+
+// Core URLs to cache (with cache-busting query strings)
 const urlsToCache = [
     '/',
-    '/index.html',
-    '/style.css',
-    '/script.js',
+    '/index.html?v=' + CACHE_VERSION,
+    '/style.css?v=' + CACHE_VERSION,
+    '/script.js?v=' + CACHE_VERSION,
     // Google Fonts (CSS)
     'https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Orbitron:wght@400;600;700;800;900&display=swap',
     // Font Awesome
@@ -26,7 +31,7 @@ self.addEventListener('install', function(event) {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(function(cache) {
-                console.log('[Service Worker] Caching core assets for v3...');
+                console.log('[Service Worker] Caching core assets for ' + CACHE_VERSION + '...');
                 return cache.addAll(urlsToCache);
             })
             .catch(function(err) {
@@ -61,7 +66,7 @@ self.addEventListener('activate', function(event) {
 });
 
 // ============================================================
-// FETCH EVENT — Serve from cache, fallback to network
+// FETCH EVENT — Intelligent caching with version awareness
 // ============================================================
 self.addEventListener('fetch', function(event) {
     const request = event.request;
@@ -98,13 +103,43 @@ self.addEventListener('fetch', function(event) {
     }
 
     // ============================================================
-    // STRATEGY 2: HTML, CSS, JS (cache-first with network fallback)
+    // STRATEGY 2: HTML, CSS, JS with cache-busting support
     // ============================================================
+    // Check if the request is for a versioned file (contains ?v=)
+    const isVersioned = url.search.includes('v=');
+
     if (request.destination === 'document' || 
         request.destination === 'style' || 
         request.destination === 'script' ||
         url.pathname === '/' ||
         url.pathname === '/index.html') {
+        
+        // For versioned requests, try network first, then cache
+        if (isVersioned) {
+            event.respondWith(
+                fetch(request)
+                    .then(function(networkResponse) {
+                        if (!networkResponse || networkResponse.status !== 200) {
+                            return networkResponse;
+                        }
+                        const responseToCache = networkResponse.clone();
+                        caches.open(CACHE_NAME)
+                            .then(function(cache) {
+                                // Store without the query string for future caching
+                                const cleanRequest = new Request(url.pathname);
+                                cache.put(cleanRequest, responseToCache);
+                            });
+                        return networkResponse;
+                    })
+                    .catch(function() {
+                        // Fallback to cache
+                        return caches.match(url.pathname);
+                    })
+            );
+            return;
+        }
+
+        // For non-versioned requests, use cache-first with network fallback
         event.respondWith(
             caches.match(request)
                 .then(function(response) {
