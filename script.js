@@ -176,6 +176,9 @@
     const modalResult = document.getElementById('modalResult');
     const modalLink = document.getElementById('modalLink');
 
+    // Fallback image if the project image fails to load
+    const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop';
+
     document.querySelectorAll('.modal-trigger').forEach(button => {
         button.addEventListener('click', function() {
             const card = this.closest('.project-card');
@@ -188,8 +191,16 @@
             const tech = card.dataset.tech || 'Tech stack not specified.';
             const result = card.dataset.result || 'Result not specified.';
 
-            modalImage.src = image;
+            // Set image with fallback
+            modalImage.src = image || FALLBACK_IMAGE;
             modalImage.alt = title;
+
+            // If image fails to load, use fallback
+            modalImage.onerror = function() {
+                this.src = FALLBACK_IMAGE;
+                this.onerror = null; // prevent infinite loop
+            };
+
             modalTitle.textContent = title;
             modalChallenge.textContent = challenge;
             modalTech.textContent = tech;
@@ -204,6 +215,8 @@
     function closeModal() {
         modal.classList.remove('open');
         document.body.style.overflow = '';
+        // Reset image onerror handler when closing
+        modalImage.onerror = null;
     }
 
     modalClose.addEventListener('click', closeModal);
