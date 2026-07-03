@@ -605,4 +605,64 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js?v=4.0.0"></script>
 </body>
+    <body>
+    <!-- ============================================================
+    ANTI-INSPECTION PROTECTION
+    ============================================================ -->
+    <script>
+        (function() {
+            // Disable right-click
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                alert('🔒 Right-click is disabled on this site.');
+                return false;
+            });
+
+            // Disable keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'F12') {
+                    e.preventDefault();
+                    alert('🔒 Inspect Element is disabled.');
+                    return false;
+                }
+                if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) {
+                    e.preventDefault();
+                    alert('🔒 Inspect Element is disabled.');
+                    return false;
+                }
+                if (e.ctrlKey && e.key === 'u') {
+                    e.preventDefault();
+                    alert('🔒 View Source is disabled.');
+                    return false;
+                }
+                if (e.ctrlKey && e.key === 's') {
+                    e.preventDefault();
+                    alert('🔒 Save Page is disabled.');
+                    return false;
+                }
+            });
+
+            // DevTools detection
+            (function detectDevTools() {
+                const devtools = /./;
+                devtools.toString = function() {
+                    document.body.innerHTML = `
+                        <div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#07070d;color:#00f0ff;font-family:monospace;text-align:center;padding:2rem;">
+                            <div>
+                                <h1 style="font-size:3rem;">🔒</h1>
+                                <h2>DevTools Detected</h2>
+                                <p style="color:#a8aac7;">Please close Developer Tools to continue viewing this portfolio.</p>
+                            </div>
+                        </div>
+                    `;
+                    return '';
+                };
+                console.log('%c', devtools);
+            })();
+
+            console.log('%c🔒 This site is protected.', 'color: #00f0ff; font-size: 16px; font-weight: bold;');
+        })();
+    </script>
+
+    <!-- Rest of your HTML -->
 </html>
